@@ -1,5 +1,4 @@
 const client = require('../lib/client');
-// import our seed data:
 const players = require('./players.js');
 const usersData = require('./users.js');
 const positions = require('./positions.js');
@@ -44,7 +43,6 @@ async function run() {
         [player.name, player.age, player.injured, user.id, player.position_id]);
       })
     );
-    
 
     console.log('seed data load complete', getEmoji(), getEmoji(), getEmoji());
   }
