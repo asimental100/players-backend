@@ -26,9 +26,9 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(256) NOT NULL,
                     age INTEGER NOT NULL,
-                    injured BOOLEAN,
-                    owner_id INTEGER NOT NULL REFERENCES users(id),
+                    injured VARCHAR(256) NOT NULL,
                     position_id INTEGER NOT NULL REFERENCES positions(id)
+                    owner_id INTEGER NOT NULL REFERENCES users(id),
                 );
         `);
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
