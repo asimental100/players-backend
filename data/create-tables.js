@@ -17,17 +17,20 @@ async function run() {
                     id SERIAL PRIMARY KEY,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
-                );           
+                );
+                CREATE TABLE positions (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  name VARCHAR(256) NOT NULL,
+                );
                 CREATE TABLE players (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    age INTEGER NOT NULL,
                     name VARCHAR(256) NOT NULL,
-                    injured VARCHAR(256) NOT NULL,
-                    position VARCHAR NOT(256) NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
-            );
+                    age INTEGER NOT NULL,
+                    injured BOOLEAN,
+                    owner_id INTEGER NOT NULL REFERENCES users(id),
+                    position_id INTEGER NOT NULL REFERENCES positions(id)
+                );
         `);
-
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
   }
   catch(err) {
