@@ -1,14 +1,14 @@
 module.exports = [
   {
-    name: 'keeper'
+    name: 'Keeper'
   },
   {
-    name: 'defender'
+    name: 'Defender'
   },
   {
-    name: 'midfielder'
+    name: 'Midfielder'
   },
   {
-    name: 'attacker'
+    name: 'Attacker'
   }
 ];
